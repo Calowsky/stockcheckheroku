@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+
+<html>
+
+   <head>
+      <title>Caleb's Stock Ticker</title>
+      
+      <style>          
+          header {background-color: blue;}
+          body {background-color: grey;}
+          h1 { text-align: center }
+
+          .info {
+              column-count: 2;
+              column-fill: balance;
+          }          
+          .info { text-align: center }
+          
+          img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+    </style>
+   </head>
+	
+   <header>
+     <h1> Caleb's Stock Ticker </h1>     
+   </header>
+
+   <body>    
+       
+
+  
+       <div class="info">
+           
+
+           
+
+        <form name = 'myform' method="post" action="http://localhost:8080/process" onsubmit="return validateform()" >
+
+         <label for="ticker">Enter a stock ticker </label>
+           <input type="text" id="ticker" name="ticker" value="">
+           <h3> </h3>
+           <label for="name">Enter a company name</label>
+           <input type="text" id="name" name="name" value="">
+
+           <input type = "submit" id = "submit" value = "Submit" />
+           
+
+   </form>
+
+   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+   <script language="javascript">
+
+
+
+
+   //checks if the order is valid 
+   function validateform() {
+   	
+    
+      name = $("input[id=name]").val();
+      ticker = $("input[id=ticker]").val();
+       
+      if(name == "" && ticker == "" ) {
+           alert("nothing has been entered.");
+           return false;
+       }
+       
+       if(name != "" && ticker != "" ) {
+            alert("Can't enter both ticker and name.");
+            return false;
+        }
+
+
+       return true;
+   }
+
+   </script>
+
+    </div>
+
+
+   </body>
+   </html>
