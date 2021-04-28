@@ -8,6 +8,16 @@ const url = "mongodb+srv://Caleb3:test@cluster0.uskds.mongodb.net/my_companies?r
 //gets data 
 http.createServer(function (req, res) {
   
+  
+      if (req.url === "/") {  
+     file = 'index.html';  
+     fs.readFile(file, function(err, txt) {  
+      res.writeHead(200, {'Content-Type': 'text/html'});           
+      res.write(txt);          
+      res.end();  
+     });  
+    }
+
 
   var body = "";
 req.on('data', function (chunk) {
